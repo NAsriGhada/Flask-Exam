@@ -1,0 +1,10 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.info{
+    border: solid black;
+    width: 50%;
+    padding: 5%;
+}

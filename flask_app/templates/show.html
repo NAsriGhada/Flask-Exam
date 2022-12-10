@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Car Deals</title>
+</head>
+<body>
+    <a href="/dashboard" class="btn btn-primary">Dashboard</a>
+    <a href="/logout" class="btn btn-primary">Logout</a>
+    <div class="info">
+        <strong>${{cars.price}}</strong>
+        <p>Model: {{cars.model}}</p>
+        <p>Make: {{cars.make}}</p>
+        <p>Year: {{cars.year}}</p>
+        <p>description: {{cars.description}}</p>
+        <p>Seller: {{users.first_name}} {{users.last_name}}</p>
+        <form action="">
+            <a href="/car/delete/{{cars.id}}" class="btn btn-primary">Purchase</a>
+        </form>
+    </div>
+</body>
+</html>

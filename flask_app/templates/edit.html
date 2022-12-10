@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Car Deal</title>
+</head>
+<body>
+    <h1>Put Car Up For Sale</h1>
+    <a href="/dashboard">dashboard</a>
+    <a href="/logout">logout</a>
+    <div class="container">
+        <form action="/update/car" method="post">
+            {% with messages = get_flashed_messages(category_filter=['car_error']) %}
+            {% if messages %}
+            <div class="alert alert-danger" role="alert">
+                <strong>Flash AHHHHHHH!!!!</strong>
+                    {% for message in messages %}
+                    <p>{{message}}</p>
+                    {% endfor %}
+            </div>
+            {% endif %}
+        {% endwith %}
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Price</label>
+                    <input type="number" class="form-control" id="" placeholder="" name="price" value="{{edit.price}}">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Model</label>
+                    <input type="text" class="form-control" id="" placeholder="" name="model" value="{{edit.model}}">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Make</label>
+                    <input type="text" class="form-control" id="" placeholder="" name="make" value="{{edit.make}}">
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">Year</label>
+                    <input type="number" id="" name="year" value="{{edit.year}}" class="form-control"> 
+                </div>
+                <div class="mb-3">
+                    <label for="">Description</label>
+                    <textarea name="description" id="" cols="30" rows="10" class="form-control">{{edit.description}}</textarea>
+                </div>
+            <button class="btn btn-primary">Update</button>
+        </form>
+</body>
+</html>
